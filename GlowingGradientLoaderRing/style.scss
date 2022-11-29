@@ -1,0 +1,79 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+@mixin animate($animation, $duration, $method, $times) {
+  animation: $animation $duration $method $times;
+}
+@mixin keyframes($name) {
+  @keyframes #{$name} {
+    @content;
+  }
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: #2d2d2d;
+
+  .loader {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background: linear-gradient(#14ffe9, #ffeb3b, #ff00e0);
+    @include animate(glow, 0.5s, linear, infinite);
+
+    span {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      background: linear-gradient(#14ffe9, #ffeb3b, #ff00e0);
+      @include animate(glow, 5s, linear, infinite);
+
+      &:first-child {
+        filter: blur(5px);
+      }
+
+      &:nth-child(2) {
+        filter: blur(10px);
+      }
+
+      &:nth-child(3) {
+        filter: blur(15px);
+      }
+
+      &:nth-child(4) {
+        filter: blur(25px);
+      }
+
+    //   &:last-child {
+    //     filter: blur(50px);
+    //   }
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      bottom: 20px;
+      left: 20px;
+      background: #2d2d2d;
+      border-radius: 50%;
+    }
+  }
+}
+
+@include keyframes(glow){
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
