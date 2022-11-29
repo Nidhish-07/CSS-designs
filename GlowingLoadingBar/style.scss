@@ -1,0 +1,55 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+@mixin animate($animation,$duration,$method,$times){
+    animation: $animation $duration $method $times;
+}
+@mixin keyframes($name){
+    @keyframes #{$name}{
+        @content;
+    }
+}
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: #2d2d2d;
+
+  .loader {
+    position: relative;
+    width: 300px;
+    height: 10px;
+    background: #fff;
+    box-shadow: 10px 0 20px #fff;
+
+    &::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(90deg, #fb0094, #0000ff, #00ff00, #ffff00,#0000ff, #00ff00,#fb0094, #ffff00,#fb0094,);
+      @include animate(glow, 20s, linear, infinite);
+      background-size: 500%;
+    }
+    &::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(90deg, #fb0094, #0000ff, #00ff00, #ffff00,#0000ff, #00ff00,#fb0094, #ffff00,#fb0094,);
+        @include animate(glow, 20s, linear, infinite);
+        background-size: 500%;
+        filter: blur(20px);
+      }
+  }
+}
+
+@include keyframes(glow){
+    0%{
+      background-position: 0 0;
+    }
+    100%{
+        background-position: 500% 0;
+    }
+}
