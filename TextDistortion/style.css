@@ -1,0 +1,44 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "sans-serif";
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: #2d2d2d;
+}
+body h1 {
+  color: #fff;
+  font-size: 3rem;
+  text-transform: uppercase;
+  z-index: 1;
+  overflow: hidden;
+}
+body h1 span {
+  color: #990000;
+}
+body h1::before {
+  content: "";
+  position: absolute;
+  left: 120%;
+  width: 120%;
+  height: 120%;
+  background: linear-gradient(90deg, transparent 0%, #000 5%, #000 100%);
+  -webkit-animation: distort 5.5s linear forwards;
+          animation: distort 5.5s linear forwards;
+}
+@-webkit-keyframes distort {
+  0% {
+    left: 110%;
+  }
+}
+@keyframes distort {
+  0% {
+    left: 110%;
+  }
+}/*# sourceMappingURL=style.css.map */

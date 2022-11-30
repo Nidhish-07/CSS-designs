@@ -1,0 +1,50 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "sans-serif";
+}
+
+@mixin animate($animation, $duration, $method, $times) {
+  animation: $animation $duration $method $times;
+}
+@mixin keyframes($name) {
+  @keyframes #{$name} {
+    @content;
+  }
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: #2d2d2d;
+
+  h1 {
+    color: #fff;
+    font-size: 3rem;
+    text-transform: uppercase;
+    z-index: 1;
+    overflow: hidden;
+    span {
+      color: #990000;
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: 120%;
+      width: 120%;
+      height: 120%;
+      background: linear-gradient(90deg, transparent 0%, #000 5%, #000 100%);
+      @include animate(distort, 5.5s, linear, forwards);
+
+      @include keyframes(distort) {
+        0% {
+          left: 110%;
+        }
+      }
+    }
+  }
+}

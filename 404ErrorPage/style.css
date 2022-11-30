@@ -1,0 +1,127 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+.container {
+  min-height: 100vh;
+  background: linear-gradient(0deg, #fff, #03a9f4);
+}
+.container .sky {
+  position: relative;
+  widows: 100%;
+  height: 60vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.container .sky h2 {
+  font-size: 16em;
+  color: #fff;
+  text-shadow: 15px 15px 0 rgba(0, 0, 0, 0.15);
+}
+.container .sky h2 span {
+  display: inline-block;
+  -webkit-animation: mov 3s ease-in-out infinite;
+          animation: mov 3s ease-in-out infinite;
+  -webkit-animation-direction: alternate;
+          animation-direction: alternate;
+}
+@-webkit-keyframes mov {
+  0% {
+    transform: translateY(-50px);
+  }
+  100% {
+    transform: translateY(50px);
+  }
+}
+@keyframes mov {
+  0% {
+    transform: translateY(-50px);
+  }
+  100% {
+    transform: translateY(50px);
+  }
+}
+.container .sky h2 span:nth-child(even) {
+  -webkit-animation-delay: -2s;
+          animation-delay: -2s;
+}
+.container .sky .plane {
+  position: absolute;
+  bottom: 50px;
+  left: 50px;
+  width: 400px;
+  height: 350px;
+  -webkit-animation: animatePlane 5s ease-in-out infinite;
+          animation: animatePlane 5s ease-in-out infinite;
+}
+@-webkit-keyframes animatePlane {
+  0%, 100% {
+    transform: translateY(-15px);
+  }
+  50% {
+    transform: translateY(15px);
+  }
+}
+@keyframes animatePlane {
+  0%, 100% {
+    transform: translateY(-15px);
+  }
+  50% {
+    transform: translateY(15px);
+  }
+}
+.container .sky .grass {
+  position: absolute;
+  bottom: 0px;
+  width: 100%;
+  height: 20px;
+  background: url("./images/grass.png");
+  background-position: bottom;
+  -webkit-animation: animateGrass 0.2 linear infinite;
+          animation: animateGrass 0.2 linear infinite;
+}
+@-webkit-keyframes animateGrass {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: -94px 0;
+  }
+}
+@keyframes animateGrass {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: -94px 0;
+  }
+}
+.container .field {
+  padding: 100px;
+  height: 40vh;
+  background: #6e2308;
+  box-shadow: inset 0 20px 10px #51680c;
+  text-align: center;
+}
+.container .field h2 {
+  color: #fff;
+  font-size: 2em;
+  margin-bottom: 20px;
+}
+.container .field a {
+  background: #fff;
+  color: #000;
+  width: 160px;
+  height: 50px;
+  line-height: 50px;
+  border-radius: 50px;
+  display: inline-block;
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: 800;
+  text-transform: uppercase;
+}/*# sourceMappingURL=style.css.map */
