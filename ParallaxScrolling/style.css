@@ -21,6 +21,27 @@ body .container {
   justify-content: center;
   align-items: center;
 }
+body .container::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to top, #cacdb2, transparent);
+  z-index: 1000;
+  opacity: 0.6;
+}
+body .container::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: #edf3d6;
+  mix-blend-mode: color;
+  opacity: 0.5;
+}
 body .container img {
   position: absolute;
   left: 0;
@@ -30,4 +51,10 @@ body .container img {
   -o-object-fit: cover;
      object-fit: cover;
   pointer-events: none;
+}
+body .container h2 {
+  position: relative;
+  color: #fff;
+  font-size: 10em;
+  z-index: 1;
 }/*# sourceMappingURL=style.css.map */
