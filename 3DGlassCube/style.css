@@ -1,0 +1,72 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #2d2d2d;
+}
+body .container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+}
+body .container .bg_video {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: fill;
+     object-fit: fill;
+  filter: blur(15px);
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+body .container .box {
+  position: absolute;
+  top: calc(50% - 200px);
+  left: calc(50% - 200px);
+  width: 400px;
+  height: 400px;
+  transform-style: preserve-3d;
+}
+body .container .box div {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transform: rotateX(-20deg) rotateY(25deg) translate3d(-75px, -50px, 150px);
+}
+body .container .box div span {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  background: #ccc;
+}
+body .container .box div span:first-child {
+  transform: rotateX(0deg) translate3d(0, 0, 200px);
+}
+body .container .box div span:nth-child(2) {
+  transform: rotateY(90deg) translate3d(0, 0, -200px);
+}
+body .container .box div span:nth-child(2) video {
+  transform: rotateY(180deg);
+}
+body .container .box div span:last-child {
+  transform: rotateX(90deg) translate3d(0, 0, 200px);
+}
+body .container .box div span video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: fill;
+     object-fit: fill;
+}/*# sourceMappingURL=style.css.map */
