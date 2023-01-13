@@ -1,0 +1,101 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+@mixin keyframes($animation-name) {
+  @-webkit-keyframes #{$animation-name} {
+    @content;
+  }
+  @keyframes #{$animation-name} {
+    @content;
+  }
+}
+
+@mixin animation($str) {
+  -webkit-animation: #{$str};
+  animation: #{$str};
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background-color: #141313;
+
+  .container {
+    display: flex;
+    align-items: flex-end;
+
+    span {
+      display: flex;
+      justify-content: center;
+      align-items: flex-end;
+      width: 25px;
+      height: 25px;
+      background: rgb(74, 73, 73);
+      margin: 0 10px;
+      height: calc(25px * var(--i));
+      @include animation("animate1 2s linear infinite");
+      animation-delay: calc(0.25s * var(--i));
+
+      i {
+        color: #fff;
+        font-size: 30px;
+        font-weight: bold;
+        transform: translateY(55px);
+        @include animation("animate2 2s linear infinite");
+        animation-delay: calc(0.25s * var(--i));
+      }
+    }
+  }
+}
+
+@include keyframes(animate1) {
+  0% {
+    background: #fff;
+    filter: blur(1.5px);
+    box-shadow: 0 0 10px #003049, 0 0 20px #003049, 0 0 40px #003049,
+      0 0 70px #003049, 0 0 100px #003049, 0 0 140px #003049, 0 0 190px #003049,
+      0 0 250px #003049, 0 0 300px #003049, 0 0 350px #003049;
+  }
+  33%,
+  66% {
+    background: #003049;
+    filter: blur(0);
+    box-shadow: none;
+  }
+  100% {
+    background: #fff;
+    filter: blur(1.5px);
+    box-shadow: 0 0 10px #003049, 0 0 20px #003049, 0 0 40px #003049,
+      0 0 70px #003049, 0 0 100px #003049, 0 0 140px #003049, 0 0 190px #003049,
+      0 0 250px #003049, 0 0 300px #003049, 0 0 350px #003049;
+  }
+}
+
+@include keyframes(animate2) {
+  0% {
+    color: #fff;
+    filter: blur(1.5px);
+    text-shadow: 0 0 10px #003049, 0 0 20px #003049, 0 0 40px #003049,
+      0 0 70px #003049, 0 0 100px #003049, 0 0 140px #003049, 0 0 190px #003049,
+      0 0 250px #003049, 0 0 300px #003049, 0 0 350px #003049;
+  }
+  33%,
+  66% {
+    color: #003049;
+    filter: blur(0);
+    text-shadow: none;
+  }
+  100% {
+    color: #fff;
+    filter: blur(1.5px);
+    text-shadow: 0 0 10px #003049, 0 0 20px #003049, 0 0 40px #003049,
+      0 0 70px #003049, 0 0 100px #003049, 0 0 140px #003049, 0 0 190px #003049,
+      0 0 250px #003049, 0 0 300px #003049, 0 0 350px #003049;
+  }
+}
