@@ -1,0 +1,38 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+body button {
+  background: transparent;
+  padding: 30px 80px;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: x-large;
+  position: relative;
+  border-width: 4px;
+  overflow: hidden;
+}
+body button:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  background: #00ff00;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+  transition: transform 1s;
+  transform-origin: bottom right;
+  transform: rotate(90deg);
+}
+body button:hover:before {
+  transform: rotate(0deg);
+}/*# sourceMappingURL=style.css.map */
