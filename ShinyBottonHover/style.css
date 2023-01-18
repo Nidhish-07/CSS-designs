@@ -21,27 +21,37 @@ body button {
   font-weight: bold;
   position: relative;
   overflow: hidden;
-  outline: none;
-  transition: all 1s;
 }
 body button:before {
   content: "";
   position: absolute;
-  width: 200%;
-  height: 40px;
+  width: 100%;
+  height: 100%;
   background-color: #fff;
   top: 0;
-  left: 0;
+  left: 0px;
   z-index: -1;
-  transition: all;
-  transition-duration: 2s;
-  transform: translateX(-100%) rotate(45deg);
+  transition-duration: 1s;
+  transform: rotateX(90deg);
 }
 body button:hover:before {
-  transform: translateX(100%) rotate(45deg);
+  transform: rotateX(0deg);
+}
+body button:after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  top: 0;
+  left: 0px;
+  z-index: -1;
+  transition-duration: 1s;
+  transform: rotateY(90deg);
+}
+body button:hover:after {
+  transform: rotateY(0deg);
 }
 body button:hover {
-  background-color: salmon;
-  border-color: salmon;
-  border-width: 3px;
+  color: #2d2d2d;
 }/*# sourceMappingURL=style.css.map */

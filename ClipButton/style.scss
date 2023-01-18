@@ -9,6 +9,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  background: #2d2d2d;
 
   button {
     background: transparent;
@@ -19,13 +20,15 @@ body {
     position: relative;
     border-width: 4px;
     overflow: hidden;
+    color: #fff;
+    border-color: #fff;
 
     &:before {
       content: "";
       position: absolute;
       left: 0;
       top: 0;
-      background: #00ff00;
+      background: #002fff;
       height: 100%;
       width: 100%;
       z-index: -1;
