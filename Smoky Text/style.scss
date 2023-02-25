@@ -1,0 +1,41 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #2d2d2d;
+
+  ul {
+    text-transform: uppercase;
+    color: white;
+    font-size: 100px;
+    list-style: none;
+    display: flex;
+    font-weight: bold;
+    letter-spacing: 15px;
+
+    li {
+      transition: 2s;
+    }
+
+    @for $i from 1 to 6 {
+      li:nth-child(#{$i}) {
+        transition-delay: 0.2s * $i;
+      }
+    }
+
+    &:hover {
+      li {
+        transform: rotate(30deg) translateY(-200px);
+        opacity: 0;
+        filter: blur(15px);
+      }
+    }
+  }
+}
