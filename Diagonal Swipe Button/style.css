@@ -34,10 +34,10 @@ body button:before {
   right: 0;
   border-top: 40px solid rgb(4, 0, 255);
   border-bottom: 32px solid rgb(4, 0, 255);
-  border-right: 40px solid transparent;
   transform: translate(-100%);
   transition: all 1s;
   z-index: -1;
+  border-right: 40px solid transparent;
 }
 body button:after {
   content: "";
@@ -48,10 +48,10 @@ body button:after {
   right: 0;
   border-top: 40px solid rgb(4, 0, 255);
   border-bottom: 32px solid rgb(4, 0, 255);
-  border-left: 40px solid transparent;
   transform: translate(100%);
-  z-index: -1;
   transition: all 1s;
+  z-index: -1;
+  border-left: 40px solid transparent;
 }
 body button:hover {
   color: white;

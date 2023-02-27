@@ -25,7 +25,7 @@ body {
     overflow: hidden;
     z-index: 4;
 
-    &:before {
+    @mixin pseudo-selector-data($dir) {
       content: "";
       position: absolute;
       top: 0;
@@ -35,25 +35,20 @@ body {
       // background: green;
       border-top: 40px solid rgb(4, 0, 255);
       border-bottom: 32px solid rgb(4, 0, 255);
-      border-right: 40px solid transparent;
-      transform: translate(-100%);
+      transform: translate($dir);
       transition: all 1s;
       z-index: -1;
     }
+
+    &:before {
+      @include pseudo-selector-data(-100%);
+
+      border-right: 40px solid transparent;
+    }
     &:after {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      bottom: 0;
-      right: 0;
-      // background: green;
-      border-top: 40px solid rgb(4, 0, 255);
-      border-bottom: 32px solid rgb(4, 0, 255);
+      @include pseudo-selector-data(100%);
+
       border-left: 40px solid transparent;
-      transform: translate(100%);
-      z-index: -1;
-      transition: all 1s;
     }
 
     &:hover {
