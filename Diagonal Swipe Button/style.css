@@ -1,0 +1,65 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+body button {
+  position: relative;
+  line-height: 80px;
+  width: 250px;
+  height: 80px;
+  border: 4px solid rgb(4, 0, 255);
+  text-transform: uppercase;
+  transition: all 0.5s;
+  color: rgb(4, 0, 255);
+  font-size: 16px;
+  font-weight: bold;
+  letter-spacing: 3px;
+  overflow: hidden;
+  z-index: 4;
+}
+body button:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  border-top: 40px solid rgb(4, 0, 255);
+  border-bottom: 32px solid rgb(4, 0, 255);
+  border-right: 40px solid transparent;
+  transform: translate(-100%);
+  transition: all 1s;
+  z-index: -1;
+}
+body button:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  border-top: 40px solid rgb(4, 0, 255);
+  border-bottom: 32px solid rgb(4, 0, 255);
+  border-left: 40px solid transparent;
+  transform: translate(100%);
+  z-index: -1;
+  transition: all 1s;
+}
+body button:hover {
+  color: white;
+  z-index: 10;
+}
+body button:hover:before {
+  transform: translateX(0);
+}
+body button:hover:after {
+  transform: translateX(0);
+}/*# sourceMappingURL=style.css.map */
