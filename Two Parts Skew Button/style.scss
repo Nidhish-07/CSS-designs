@@ -1,0 +1,65 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #10ac84;
+
+  button {
+    border: none;
+    position: relative;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    padding: 24px 50px;
+    background: transparent;
+    color: #fff;
+    transition: all 0.5s;
+    font-size: 24px;
+    font-weight: 600;
+
+    @mixin skew-box($color-val) {
+      content: "";
+      position: absolute;
+      width: 50%;
+      height: 100%;
+
+      transition: all 0.5s;
+      z-index: -1;
+      background-color: $color-val;
+      transform: skew(30deg);
+      transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+
+    &:before {
+      @include skew-box(blue);
+      top: -5px;
+      left: -1%;
+    }
+    &:after {
+      @include skew-box(rgb(245, 58, 37));
+      right: -1%;
+      bottom: -5px;
+    }
+
+    &:hover {
+      &:before,
+      &:after {
+        transform: skew(0);
+      }
+      &:after {
+        right: 50%;
+        bottom: 0px;
+      }
+      &:before {
+        top: 0px;
+        left: 50%;
+      }
+    }
+  }
+}

@@ -1,0 +1,58 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #2d2d2d;
+}
+body button {
+  border: none;
+  position: relative;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  width: 250px;
+  height: 80px;
+  background: transparent;
+  color: white;
+  transition: all 0.5s;
+  font-size: 24px;
+  font-weight: 600;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+body button:before {
+  position: absolute;
+  content: "";
+  transition: all 0.5s;
+  top: -15px;
+  left: 0%;
+  width: 200px;
+  height: 90px;
+  border-left: 2px solid crimson;
+  border-right: 2px solid gold;
+}
+body button:after {
+  position: absolute;
+  content: "";
+  transition: all 0.5s;
+  top: 0;
+  left: -15px;
+  height: 60px;
+  width: 230px;
+  border-top: 2px solid crimson;
+  border-bottom: 2px solid gold;
+}
+body button:hover:before {
+  transform: rotateY(180deg);
+}
+body button:hover:after {
+  transform: rotateX(180deg);
+}/*# sourceMappingURL=style.css.map */
