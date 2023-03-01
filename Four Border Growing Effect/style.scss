@@ -24,10 +24,6 @@ body {
     transition: all 0.5s;
     font-size: 24px;
     font-weight: 600;
-    text-align: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
 
     @mixin borders() {
       position: absolute;
@@ -37,29 +33,53 @@ body {
 
     &:before {
       @include borders();
-      top: -15px;
-      left: 0%;
-      width: 200px;
-      height: 90px;
-      border-left: 2px solid crimson;
-      border-right: 2px solid gold;
+      top: 0;
+      left: 0;
+      width: 0%;
+      height: 5%;
+      background-color: white;
     }
     &:after {
       @include borders();
-      top: 0;
-      left: -15px;
-      height: 60px;
-      width: 230px;
-      border-top: 2px solid crimson;
-      border-bottom: 2px solid gold;
+      bottom: 0;
+      right: 0;
+      width: 0%;
+      height: 5%;
+      background-color: white;
     }
 
     &:hover {
       &:before {
-        transform: rotateY(180deg);
+        width: 100%;
       }
       &:after {
-        transform: rotateX(180deg);
+        width: 100%;
+      }
+
+      span:before {
+        height: 100%;
+      }
+      span:after {
+        height: 100%;
+      }
+    }
+
+    span {
+      &:before {
+        @include borders();
+        width: 4px;
+        height: 0%;
+        background-color: white;
+        right: 0;
+        top: 0;
+      }
+      &:after {
+        @include borders();
+        width: 4px;
+        height: 0%;
+        background-color: white;
+        left: 0;
+        bottom: 0;
       }
     }
   }
