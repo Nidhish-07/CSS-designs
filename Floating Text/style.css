@@ -1,0 +1,33 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+@keyframes float {
+  from {
+    transform: rotate(5deg);
+  }
+  to {
+    transform: rotate(-5deg);
+  }
+}
+body {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: salmon;
+}
+body p {
+  text-align: center;
+  color: aliceblue;
+  font-size: 100px;
+  line-height: 100px;
+  text-transform: uppercase;
+  font-weight: bold;
+  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.2), 0 2px 0 rgba(0, 0, 0, 0.2), 0 3px 0 rgba(0, 0, 0, 0.2), 0 4px 0 rgba(0, 0, 0, 0.2), 0 25px 5px rgba(0, 0, 0, 0.2);
+  animation: float 3s linear infinite;
+  animation-direction: alternate;
+}/*# sourceMappingURL=style.css.map */
