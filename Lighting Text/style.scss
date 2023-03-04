@@ -1,0 +1,51 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+@keyframes lighting {
+  0% {
+    color: gray;
+    text-shadow: none;
+  }
+  50% {
+    color: gray;
+    text-shadow: none;
+  }
+  100% {
+    color: yellow;
+    text-shadow: 0 0 7px yellow, 0 0 50px yellow;
+  }
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #2d2d2d;
+
+  ul {
+    text-align: center;
+    color: gray;
+    list-style: none;
+    font-size: 75px;
+    text-transform: uppercase;
+    display: flex;
+    letter-spacing: 8px;
+    font-weight: bold;
+
+    li {
+      animation: lighting 1.2s linear infinite;
+      animation-direction: alternate;
+    }
+
+    @for $i from 1 through 9 {
+      li:nth-child(#{$i}) {
+        animation-delay: 0.1s * $i;
+      }
+    }
+  }
+}
