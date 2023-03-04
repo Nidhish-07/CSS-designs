@@ -1,0 +1,40 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+@keyframes rotate-text {
+  0% {
+    content: "HTML";
+  }
+  50% {
+    content: "CSS";
+    color: dodgerblue;
+  }
+  100% {
+    content: "JAVASCRIPT";
+    color: yellow;
+  }
+}
+body {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: aqua;
+}
+body p {
+  text-align: center;
+  color: aliceblue;
+  font-size: 50px;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+body p span:before {
+  content: "HTML";
+  color: orangered;
+  animation: rotate-text 3s linear infinite;
+  animation-direction: alternate-reverse;
+}/*# sourceMappingURL=style.css.map */
