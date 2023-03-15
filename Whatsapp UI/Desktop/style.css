@@ -1,0 +1,319 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+body {
+  display: flex;
+  min-height: 100vh;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(#009688 0%, #009688 130px, #d9dbd5 130px, #d9dbd5 100%);
+}
+body .container {
+  position: relative;
+  display: flex;
+  box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.05), 0 2px 5px 0 rgba(0, 0, 0, 0.05);
+  width: 1396px;
+  max-width: 100%;
+  height: calc(100vh - 40px);
+  background: #fff;
+}
+body .container .leftBar {
+  position: relative;
+  flex: 30%;
+  background: #fff;
+  border-right: 1px solid rgba(0, 0, 0, 0.2);
+}
+body .container .leftBar .header {
+  position: relative;
+  width: 100%;
+  height: 60px;
+  background: #ededed;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 16px;
+}
+body .container .leftBar .header .userImg {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  overflow: hidden;
+  border-radius: 50%;
+}
+body .container .leftBar .header .userImg .coverImg {
+  position: inherit;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+body .container .leftBar .header .header_icons {
+  display: flex;
+}
+body .container .leftBar .header .header_icons img {
+  cursor: pointer;
+  margin-left: 22px;
+}
+body .container .leftBar .search {
+  position: relative;
+  width: 100%;
+  height: 50px;
+  background: #f6f6f6;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 16px;
+}
+body .container .leftBar .search div {
+  width: 100%;
+}
+body .container .leftBar .search div input {
+  width: 100%;
+  outline: none;
+  border: none;
+  background: #fff;
+  padding: 6px;
+  height: 38px;
+  border-radius: 30px;
+  font-size: 14px;
+  padding-left: 40px;
+}
+body .container .leftBar .search div input::-moz-placeholder {
+  color: #bbb;
+}
+body .container .leftBar .search div input::placeholder {
+  color: #bbb;
+}
+body .container .leftBar .search div img {
+  position: absolute;
+  left: 30px;
+  top: 14px;
+}
+body .container .leftBar .chats {
+  position: relative;
+  overflow-y: auto;
+  height: calc(100% - 110px);
+}
+body .container .leftBar .chats .chat {
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding: 16px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+  cursor: pointer;
+}
+body .container .leftBar .chats .chat.active {
+  background: #ebebeb;
+}
+body .container .leftBar .chats .chat.active .details .listHead p {
+  color: #111;
+}
+body .container .leftBar .chats .chat.unread .details .listHead p {
+  color: #06a755;
+}
+body .container .leftBar .chats .chat:hover {
+  background: #f5f5f5;
+}
+body .container .leftBar .chats .chat .imgBox {
+  position: relative;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-right: 10px;
+}
+body .container .leftBar .chats .chat .details {
+  position: relative;
+  width: 100%;
+}
+body .container .leftBar .chats .chat .details .listHead {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 5px;
+}
+body .container .leftBar .chats .chat .details .listHead h4 {
+  font-size: 1.1em;
+  font-weight: 600;
+  color: #111;
+}
+body .container .leftBar .chats .chat .details .listHead p {
+  font-size: 0.75em;
+  color: #aaa;
+}
+body .container .leftBar .chats .chat .details .message {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+body .container .leftBar .chats .chat .details .message p {
+  color: #aaa;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  font-size: 0.9em;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+body .container .leftBar .chats .chat .details .message b {
+  background: #06d755;
+  color: #fff;
+  min-width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 0.75em;
+}
+body .container .rightBar {
+  position: relative;
+  flex: 70%;
+  background: gainsboro;
+}
+body .container .rightBar::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #e2d9d3;
+}
+body .container .rightBar .header {
+  position: relative;
+  width: 100%;
+  height: 60px;
+  background: #ededed;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 16px;
+}
+body .container .rightBar .header .imgText {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+body .container .rightBar .header .imgText h4 {
+  font-weight: 500;
+  line-height: 1.2em;
+  margin-left: 16px;
+}
+body .container .rightBar .header .imgText h4 span {
+  font-size: 0.8em;
+  color: #555;
+}
+body .container .rightBar .header .imgText .userImg {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  overflow: hidden;
+  border-radius: 50%;
+}
+body .container .rightBar .header .imgText .userImg .coverImg {
+  position: inherit;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+body .container .rightBar .header .header_icons {
+  display: flex;
+}
+body .container .rightBar .header .header_icons img {
+  cursor: pointer;
+  margin-left: 22px;
+}
+body .container .rightBar .conversationBox {
+  position: relative;
+  width: 100%;
+  height: calc(100% - 120px);
+  padding: 50px;
+  overflow-y: auto;
+}
+body .container .rightBar .conversationBox .message {
+  position: relative;
+  display: flex;
+  width: 100%;
+  margin: 5px 0;
+}
+body .container .rightBar .conversationBox .message p {
+  position: relative;
+  right: 0;
+  text-align: right;
+  max-width: 65%;
+  padding: 12px;
+  background: #dcf8c6;
+  border-radius: 10px;
+  font-size: 0.9em;
+}
+body .container .rightBar .conversationBox .message p:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: -12px;
+  width: 20px;
+  height: 20px;
+  background: linear-gradient(135deg, #dcf8c6 0%, #dcf8c6 50%, transparent 50%, transparent);
+}
+body .container .rightBar .conversationBox .message p span {
+  display: block;
+  margin-top: 5px;
+  font-size: 0.85em;
+  opacity: 0.5;
+}
+body .container .rightBar .conversationBox .message.friendMessage p:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -12px;
+  width: 20px;
+  height: 20px;
+  background: linear-gradient(225deg, #fff 0%, #fff 50%, transparent 50%, transparent);
+}
+body .container .rightBar .conversationBox .myMessage {
+  justify-content: flex-end;
+}
+body .container .rightBar .conversationBox .friendMessage {
+  justify-content: flex-start;
+}
+body .container .rightBar .conversationBox .friendMessage p {
+  background: #fff;
+  text-align: left;
+}
+body .container .rightBar .chatBoxInput {
+  position: relative;
+  width: 100%;
+  height: 60px;
+  background: #f0f0f0;
+  padding: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+body .container .rightBar .chatBoxInput img {
+  cursor: pointer;
+}
+body .container .rightBar .chatBoxInput img:nth-child(1) {
+  margin-right: 16px;
+}
+body .container .rightBar .chatBoxInput input {
+  position: relative;
+  width: 90%;
+  margin: 0 20px;
+  padding: 10px 20px;
+  border: none;
+  outline: none;
+  border: 30px;
+  font-size: 1em;
+}/*# sourceMappingURL=style.css.map */
